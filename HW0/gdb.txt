@@ -1,0 +1,124 @@
+GDB Practice:
+
+آ.
+gdb map
+
+ب.
+break main
+
+ج.
+run
+
+د.
+p argv
+output => (char **) 0x7fffffffe4d8 
+به فایل اجرایی اشاره دارد
+
+    *
+
+ه.
+p *argv
+output => 0x7fffffffe715 "/home/vagrant/code/personal/HW0/map" 
+    *
+
+و.
+list
+n 3
+
+ز.
+p recur
+output => {int (int)} 0x5555555546cd <recur>
+(the [p &recur is the address of recur and it also return 0x5555555546cd])
+    *
+
+ح.
+step
+
+ط.
+n 2
+
+ی.
+disas
+
+ک.
+ni 5
+
+ل.
+info registers
+rax            0x1      1
+rbx            0x0      0
+rcx            0x0      0
+rdx            0x0      0
+rsi            0x555555756340   93824994337600
+rdi            0x1      1
+rbp            0x7fffffffe380   0x7fffffffe380
+rsp            0x7fffffffe360   0x7fffffffe360
+r8             0x0      0
+r9             0x7ffff7b523a0   140737349231520
+r10            0x0      0
+r11            0x246    582
+r12            0x555555554580   93824992232832
+r13            0x7fffffffe4d0   140737488348368
+r14            0x0      0
+r15            0x0      0
+rip            0x555555554702   0x555555554702 <recur+53>
+eflags         0x10202   [ IF RF ]    
+cs             0x33     51
+ss             0x2b     43
+ds             0x0      0
+es             0x0      0
+fs             0x0      0
+gs             0x0      0
+*
+
+م.
+stepi
+
+ن.
+layout src
+
+س.
+backtarce
+
+ع.
+break recurse.c:3 if i==0
+
+ف.
+continue
+
+ص.
+backtrace
+#0  recur (i=0) at recurse.c:5
+#1  0x0000555555554707 in recur (i=1) at recurse.c:9
+#2  0x0000555555554707 in recur (i=2) at recurse.c:9
+#3  0x0000555555554707 in recur (i=3) at recurse.c:9
+#4  0x00005555555546c6 in main (argc=1, argv=0x7fffffffe4d8) at map.c:23
+
+ق.
+up 4
+p argc
+output => 1
+
+ر.
+n 3
+
+ش.
+disas
+or
+layout asm
+
+ت.
+mov    $0x0,%eax
+    *
+
+ث.
+layout src
+
+خ.
+n 3
+
+ذ.
+continue
+
+ض.
+quit
